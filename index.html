@@ -44,6 +44,37 @@
             background: linear-gradient(to right, #a90d26, #00602a);
             box-shadow: 0 0 14px rgba(255,209,0,0.8);
         }
+        .card-cochabamba {
+            border: 2px solid #D4AF37;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: box-shadow 0.3s;
+            border-top: 6px solid #00AEEF;
+            background: linear-gradient(135deg, rgba(0,174,239,0.05), rgba(0,174,239,0.09));
+        }
+        .card-cochabamba:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .badge-aniversario-cochabamba {
+            display: inline-block;
+            background: #00AEEF;
+            color: #fff;
+            border: 1px solid #D4AF37;
+            font-size: 0.75em;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+        }
+        .card-cochabamba .btn {
+            background: #00AEEF;
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 8px rgba(0,174,239,0.5);
+        }
+        .card-cochabamba .btn:hover {
+            background: #0090c4;
+            box-shadow: 0 0 14px rgba(212,175,55,0.6);
+        }
         footer { text-align: center; font-size: 0.8em; color: #888; margin-top: 50px; }
     </style>
 </head>
@@ -52,6 +83,12 @@
     <h1>Boletín Económico Virtual</h1>
     <p class="subtitle">Sociedad Científica de Estudiantes de Economía - UMSA</p>
 </header>
+<div class="card-cochabamba">
+    <span class="badge-aniversario-cochabamba">🎉 Aniversario de Cochabamba</span>
+    <h2>Edición 2026: Cochabamba</h2>
+    <p>Análisis de coyuntura económica del departamento de Cochabamba</p>
+    <a href="2026/BOLETIN_DEPARTAMENTAL_DE_COCHABAMBA.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+</div>
 <div class="card-lapaz">
     <span class="badge-aniversario">🎉 Aniversario de La Paz</span>
     <h2>Edición 2026: La Paz</h2>
