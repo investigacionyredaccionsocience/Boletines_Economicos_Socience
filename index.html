@@ -75,6 +75,37 @@
             background: #0090c4;
             box-shadow: 0 0 14px rgba(212,175,55,0.6);
         }
+        .card-santacruz {
+            border: 2px solid #D4AF37;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: box-shadow 0.3s;
+            border-top: 6px solid #145A32;
+            background: linear-gradient(135deg, rgba(20,90,50,0.05), #ffffff);
+        }
+        .card-santacruz:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
+        .badge-aniversario-santacruz {
+            display: inline-block;
+            background: #145A32;
+            color: #fff;
+            border: 1px solid #D4AF37;
+            font-size: 0.75em;
+            font-weight: bold;
+            padding: 4px 12px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+        }
+        .card-santacruz .btn {
+            background: #145A32;
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 8px rgba(20,90,50,0.5);
+        }
+        .card-santacruz .btn:hover {
+            background: #0d4023;
+            box-shadow: 0 0 14px rgba(212,175,55,0.6);
+        }
         footer { text-align: center; font-size: 0.8em; color: #888; margin-top: 50px; }
     </style>
 </head>
@@ -83,6 +114,12 @@
     <h1>Boletín Económico Virtual</h1>
     <p class="subtitle">Sociedad Científica de Estudiantes de Economía - UMSA</p>
 </header>
+<div class="card-santacruz">
+    <span class="badge-aniversario-santacruz">🎉 Aniversario de Santa Cruz</span>
+    <h2>Edición Septiembre 2026: Santa Cruz</h2>
+    <p>Análisis de coyuntura económica del departamento de Santa Cruz</p>
+    <a href="2026/Boletin_departamental_Santa_Cruz.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+</div>
 <div class="card-cochabamba">
     <span class="badge-aniversario-cochabamba">🎉 Aniversario de Cochabamba</span>
     <h2>Edición 2026: Cochabamba</h2>
