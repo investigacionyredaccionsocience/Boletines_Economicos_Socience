@@ -3,152 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boletines Económicos | SOCIENCE - UMSA</title>
+    <title>Repositorio SOCIENCE - UMSA</title>
     <style>
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 40px 0; border-bottom: 1px solid #eee; }
-        h1 { margin: 0; color: #003366; }
-        .subtitle { color: #666; font-style: italic; }
-        .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; transition: box-shadow 0.3s; }
+        /* Estilos Generales */
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0 20px 0; }
+        h1 { margin: 0; color: #003366; font-size: 2.2em; }
+        .subtitle { color: #666; font-style: italic; margin-bottom: 20px;}
+        
+        /* Barra de Navegación */
+        nav { background: #003366; border-radius: 8px; padding: 15px; margin-bottom: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        nav ul { list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.3s; }
+        nav a:hover { color: #FFD100; }
+
+        /* Secciones */
+        section { margin-bottom: 60px; scroll-margin-top: 40px; }
+        .section-title { border-bottom: 3px solid #003366; padding-bottom: 10px; color: #003366; margin-bottom: 25px; }
+
+        /* Tarjetas Estándar */
+        .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; transition: box-shadow 0.3s; background: #fff; }
         .card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; background: #003366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 10px; }
+        .btn { display: inline-block; background: #003366; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; margin-top: 10px; transition: background 0.3s; }
         .btn:hover { background: #002244; }
+
+        /* Tarjetas Personalizadas (Departamentos) */
         .card-lapaz {
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            transition: box-shadow 0.3s;
+            border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0; transition: box-shadow 0.3s;
             border-top: 6px solid;
             border-image: linear-gradient(to right, #C8102E 0%, #C8102E 50%, #007A33 50%, #007A33 100%) 1;
             background: linear-gradient(135deg, rgba(200,16,46,0.04), rgba(0,122,51,0.05));
         }
         .card-lapaz:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
         .badge-aniversario {
-            display: inline-block;
-            background: linear-gradient(to right, #C8102E, #007A33);
-            color: #fff;
-            font-size: 0.75em;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+            display: inline-block; background: linear-gradient(to right, #C8102E, #007A33); color: #fff; font-size: 0.75em; font-weight: bold; padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; text-shadow: 0 1px 2px rgba(0,0,0,0.35);
         }
-        .card-lapaz .btn {
-            background: linear-gradient(to right, #C8102E, #007A33);
-            border: 2px solid #FFD100;
-            box-shadow: 0 0 8px rgba(255,209,0,0.5);
-        }
-        .card-lapaz .btn:hover {
-            background: linear-gradient(to right, #a90d26, #00602a);
-            box-shadow: 0 0 14px rgba(255,209,0,0.8);
-        }
+        .card-lapaz .btn { background: linear-gradient(to right, #C8102E, #007A33); border: 2px solid #FFD100; box-shadow: 0 0 8px rgba(255,209,0,0.5); }
+        .card-lapaz .btn:hover { background: linear-gradient(to right, #a90d26, #00602a); box-shadow: 0 0 14px rgba(255,209,0,0.8); }
+
         .card-cochabamba {
-            border: 2px solid #D4AF37;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            transition: box-shadow 0.3s;
-            border-top: 6px solid #00AEEF;
-            background: linear-gradient(135deg, rgba(0,174,239,0.05), rgba(0,174,239,0.09));
+            border: 2px solid #D4AF37; border-radius: 8px; padding: 20px; margin: 20px 0; transition: box-shadow 0.3s; border-top: 6px solid #00AEEF; background: linear-gradient(135deg, rgba(0,174,239,0.05), rgba(0,174,239,0.09));
         }
         .card-cochabamba:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
         .badge-aniversario-cochabamba {
-            display: inline-block;
-            background: #00AEEF;
-            color: #fff;
-            border: 1px solid #D4AF37;
-            font-size: 0.75em;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+            display: inline-block; background: #00AEEF; color: #fff; border: 1px solid #D4AF37; font-size: 0.75em; font-weight: bold; padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; text-shadow: 0 1px 2px rgba(0,0,0,0.35);
         }
-        .card-cochabamba .btn {
-            background: #00AEEF;
-            border: 2px solid #D4AF37;
-            box-shadow: 0 0 8px rgba(0,174,239,0.5);
-        }
-        .card-cochabamba .btn:hover {
-            background: #0090c4;
-            box-shadow: 0 0 14px rgba(212,175,55,0.6);
-        }
+        .card-cochabamba .btn { background: #00AEEF; border: 2px solid #D4AF37; box-shadow: 0 0 8px rgba(0,174,239,0.5); }
+        .card-cochabamba .btn:hover { background: #0090c4; box-shadow: 0 0 14px rgba(212,175,55,0.6); }
+
         .card-santacruz {
-            border: 2px solid #D4AF37;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            transition: box-shadow 0.3s;
-            border-top: 6px solid #145A32;
-            background: linear-gradient(135deg, rgba(20,90,50,0.05), #ffffff);
+            border: 2px solid #D4AF37; border-radius: 8px; padding: 20px; margin: 20px 0; transition: box-shadow 0.3s; border-top: 6px solid #145A32; background: linear-gradient(135deg, rgba(20,90,50,0.05), #ffffff);
         }
         .card-santacruz:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.15); }
         .badge-aniversario-santacruz {
-            display: inline-block;
-            background: #145A32;
-            color: #fff;
-            border: 1px solid #D4AF37;
-            font-size: 0.75em;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+            display: inline-block; background: #145A32; color: #fff; border: 1px solid #D4AF37; font-size: 0.75em; font-weight: bold; padding: 4px 12px; border-radius: 12px; margin-bottom: 12px; text-shadow: 0 1px 2px rgba(0,0,0,0.35);
         }
-        .card-santacruz .btn {
-            background: #145A32;
-            border: 2px solid #D4AF37;
-            box-shadow: 0 0 8px rgba(20,90,50,0.5);
-        }
-        .card-santacruz .btn:hover {
-            background: #0d4023;
-            box-shadow: 0 0 14px rgba(212,175,55,0.6);
-        }
-        footer { text-align: center; font-size: 0.8em; color: #888; margin-top: 50px; }
+        .card-santacruz .btn { background: #145A32; border: 2px solid #D4AF37; box-shadow: 0 0 8px rgba(20,90,50,0.5); }
+        .card-santacruz .btn:hover { background: #0d4023; box-shadow: 0 0 14px rgba(212,175,55,0.6); }
+
+        footer { text-align: center; font-size: 0.9em; color: #666; margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; }
     </style>
 </head>
 <body>
+
 <header>
-    <h1>Boletín Económico Virtual</h1>
+    <h1>Repositorio Académico y de Investigación</h1>
     <p class="subtitle">Sociedad Científica de Estudiantes de Economía - UMSA</p>
 </header>
-<div class="card-santacruz">
-    <span class="badge-aniversario-santacruz">🎉 Aniversario de Santa Cruz</span>
-    <h2>Edición Septiembre 2026: Santa Cruz</h2>
-    <p>Análisis de coyuntura económica del departamento de Santa Cruz</p>
-    <a href="2026/Boletin_departamental_Santa_Cruz.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
-</div>
-<div class="card-cochabamba">
-    <span class="badge-aniversario-cochabamba">🎉 Aniversario de Cochabamba</span>
-    <h2>Edición 2026: Cochabamba</h2>
-    <p>Análisis de coyuntura económica del departamento de Cochabamba</p>
-    <a href="2026/BOLETIN_DEPARTAMENTAL_DE_COCHABAMBA.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
-</div>
-<div class="card-lapaz">
-    <span class="badge-aniversario">🎉 Aniversario de La Paz</span>
-    <h2>Edición 2026: La Paz</h2>
-    <p>Análisis de coyuntura económica del departamento de La Paz</p>
-    <a href="2026/Boletin_Departamental_La_Paz_2026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
-</div>
-<div class="card">
-    <h2>Edición Febrero 2026: Oruro</h2>
-    <p>Análisis de coyuntura económica del departamento de Oruro</p>
-    <a href="2026/Boletín%20Económico%20Virtual%20de%20Oruro%202026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
-</div>
-<div class="card">
-    <h2>Edición 2026: Tarija</h2>
-    <p>Análisis de coyuntura económica del departamento de Tarija</p>
-    <a href="2026/Boletín%20Departamental%20de%20Tarija%202026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
-</div>
-<div class="card">
-    <h2>Edición Mayo 2026: Chuquisaca</h2>
-    <p>Análisis de coyuntura económica del departamento de Chuquisaca</p>
-    <a href="2026/Boletin%20Departamental%20de%20Chuquisaca%202026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
-</div>
+
+<!-- Menú de Navegación -->
+<nav>
+    <ul>
+        <li><a href="#boletines">Boletines Económicos</a></li>
+        <li><a href="#monitor">Monitor Macroeconómico</a></li>
+        <li><a href="#ecovision">Ecovisión</a></li>
+        <li><a href="#datos">Base de Datos</a></li>
+    </ul>
+</nav>
+
+<!-- Sección: Boletines Económicos -->
+<section id="boletines">
+    <h2 class="section-title">Boletines Económicos Virtuales</h2>
+    
+    <div class="card-santacruz">
+        <span class="badge-aniversario-santacruz">🎉 Aniversario de Santa Cruz</span>
+        <h3>Edición Septiembre 2026: Santa Cruz</h3>
+        <p>Análisis de coyuntura económica del departamento de Santa Cruz.</p>
+        <a href="2026/Boletin_departamental_Santa_Cruz.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+    </div>
+
+    <div class="card-cochabamba">
+        <span class="badge-aniversario-cochabamba">🎉 Aniversario de Cochabamba</span>
+        <h3>Edición 2026: Cochabamba</h3>
+        <p>Análisis de coyuntura económica del departamento de Cochabamba.</p>
+        <a href="2026/BOLETIN_DEPARTAMENTAL_DE_COCHABAMBA.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+    </div>
+
+    <div class="card-lapaz">
+        <span class="badge-aniversario">🎉 Aniversario de La Paz</span>
+        <h3>Edición 2026: La Paz</h3>
+        <p>Análisis de coyuntura económica del departamento de La Paz.</p>
+        <a href="2026/Boletin_Departamental_La_Paz_2026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+    </div>
+
+    <div class="card">
+        <h3>Edición Febrero 2026: Oruro</h3>
+        <p>Análisis de coyuntura económica del departamento de Oruro.</p>
+        <a href="2026/Boletín%20Económico%20Virtual%20de%20Oruro%202026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+    </div>
+
+    <div class="card">
+        <h3>Edición 2026: Tarija</h3>
+        <p>Análisis de coyuntura económica del departamento de Tarija.</p>
+        <a href="2026/Boletín%20Departamental%20de%20Tarija%202026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+    </div>
+
+    <div class="card">
+        <h3>Edición Mayo 2026: Chuquisaca</h3>
+        <p>Análisis de coyuntura económica del departamento de Chuquisaca.</p>
+        <a href="2026/Boletin%20Departamental%20de%20Chuquisaca%202026.pdf" class="btn" target="_blank">Descargar Boletín (PDF)</a>
+    </div>
+</section>
+
+<!-- Sección: Monitor Macroeconómico Social -->
+<section id="monitor">
+    <h2 class="section-title">Monitor Macroeconómico Social</h2>
+    <div class="card">
+        <h3>Reporte Mensual - Septiembre 2026</h3>
+        <p>Seguimiento e interpretación de los principales indicadores macroeconómicos y sociales a nivel nacional.</p>
+        <!-- Fíjate cómo la ruta ahora usa "Monitor/" en mayúscula -->
+        <a href="Monitor/tu-archivo-aqui.pdf" class="btn" target="_blank">Ver Reporte</a>
+    </div>
+</section>
+
+<!-- Sección: Ecovisión -->
+<section id="ecovision">
+    <h2 class="section-title">Ecovisión</h2>
+    <div class="card">
+        <h3>Revista Ecovisión Vol. 1</h3>
+        <p>Artículos de investigación, ensayos académicos y columnas de opinión desarrolladas por miembros de la sociedad.</p>
+        <!-- Fíjate cómo la ruta ahora usa "Ecovision/" en mayúscula -->
+        <a href="Ecovision/tu-archivo-aqui.pdf" class="btn" target="_blank">Leer Revista</a>
+    </div>
+</section>
+
+<!-- Sección: Base de Datos -->
+<section id="datos">
+    <h2 class="section-title">Base de Datos</h2>
+    <div class="card">
+        <h3>Repositorio Estadístico 2026</h3>
+        <p>Datasets limpios y estructurados utilizados para las investigaciones y boletines de SOCIENCE (formato Excel / CSV).</p>
+        <!-- Fíjate cómo la ruta ahora usa "Datos/" en mayúscula -->
+        <a href="Datos/tu-archivo-aqui.xlsx" class="btn" target="_blank">Acceder a los Datos</a>
+    </div>
+</section>
+
 <footer>
     <p>&copy; 2026 SOCIENCE - UMSA. Licencia Creative Commons Atribución 4.0.</p>
 </footer>
+
 </body>
 </html>
