@@ -70,6 +70,8 @@ section{padding:64px 0 8px}
 .bcard.cb{--a:#00AEEF;--b:#00AEEF}
 .bcard.sc{--a:#145A32;--b:#145A32}
 .bcard.gold{border-color:#D4AF37}
+.bcard.pa{--a:#17803A;--b:#17803A}
+.bcard.pa::before{height:10px;background:linear-gradient(180deg,#fff 50%,var(--a) 50%);box-shadow:inset 0 0 0 1px var(--a)}
 .ed{margin:0;color:var(--muted);font-size:.9rem}
 .bcard h3{font-family:var(--head);font-size:1.7rem;line-height:1.15;margin:0}
 .chip{align-self:flex-start;background:linear-gradient(90deg,var(--a),var(--b));color:#fff;font-size:.78rem;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:6px;text-shadow:0 1px 2px rgba(0,0,0,.3)}
@@ -211,6 +213,7 @@ footer a{color:var(--gold)}
    cls: 'lp' (La Paz), 'cb' (Cochabamba), 'sc' (Santa Cruz) o vacío para el estilo estándar.
    badge: texto opcional de aniversario. */
 const BOLETINES = [
+  {dep:'Pando', ed:'Edición octubre 2026', cls:'pa', badge:'🎉 Aniversario 88 de Pando', file:'2026/BOLETIN_DEPARTAMENTAL_DE_PANDO_2026.pdf'},
   {dep:'Santa Cruz', ed:'Edición septiembre 2026', cls:'sc gold', badge:'🎉 Aniversario de Santa Cruz', file:'2026/Boletin_departamental_Santa_Cruz.pdf'},
   {dep:'Cochabamba', ed:'Edición 2026', cls:'cb gold', badge:'🎉 Aniversario de Cochabamba', file:'2026/BOLETIN_DEPARTAMENTAL_DE_COCHABAMBA.pdf'},
   {dep:'La Paz', ed:'Edición 2026', cls:'lp', badge:'🎉 Aniversario de La Paz', file:'2026/Boletin_Departamental_La_Paz_2026.pdf'},
