@@ -75,6 +75,11 @@ section{padding:64px 0 8px}
 /* Potosí: bandera rojo y blanco, diagonalmente cuarteada (Estatuto Autonómico, art. 10) */
 .bcard.pt{--a:#D52B1E;--b:#D52B1E}
 .bcard.pt::before{height:12px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 12' preserveAspectRatio='none'%3E%3Crect width='100' height='12' fill='%23fff'/%3E%3Cpolygon points='0,0 100,0 50,6' fill='%23D52B1E'/%3E%3Cpolygon points='0,12 100,12 50,6' fill='%23D52B1E'/%3E%3C/svg%3E") center/100% 100% no-repeat;box-shadow:inset 0 0 0 1px var(--a)}
+/* Beni: bandera verde con ocho estrellas doradas en círculo (una por provincia).
+   Franja verde arriba y mini-bandera en la esquina. */
+.bcard.bn{--a:#007934;--b:#007934}
+.bcard.bn::before{height:10px}
+.bcard.bn::after{content:"";position:absolute;top:24px;right:20px;width:46px;height:31px;border-radius:3px;box-shadow:0 0 0 1px #D4AF37;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 44 30'%3E%3Cdefs%3E%3Cpolygon id='s' points='0,-3 0.7,-1 2.85,-0.93 1.14,0.37 1.76,2.43 0,1.2 -1.76,2.43 -1.14,0.37 -2.85,-0.93 -0.7,-1'/%3E%3C/defs%3E%3Crect width='44' height='30' fill='%23007934'/%3E%3Cg fill='%23FFD100'%3E%3Cuse xlink:href='%23s' x='31' y='15'/%3E%3Cuse xlink:href='%23s' x='28.4' y='21.4'/%3E%3Cuse xlink:href='%23s' x='22' y='24'/%3E%3Cuse xlink:href='%23s' x='15.6' y='21.4'/%3E%3Cuse xlink:href='%23s' x='13' y='15'/%3E%3Cuse xlink:href='%23s' x='15.6' y='8.6'/%3E%3Cuse xlink:href='%23s' x='22' y='6'/%3E%3Cuse xlink:href='%23s' x='28.4' y='8.6'/%3E%3C/g%3E%3C/svg%3E") center/100% 100% no-repeat}
 .ed{margin:0;color:var(--muted);font-size:.9rem}
 .bcard h3{font-family:var(--head);font-size:1.7rem;line-height:1.15;margin:0}
 .chip{align-self:flex-start;background:linear-gradient(90deg,var(--a),var(--b));color:#fff;font-size:.78rem;font-weight:600;padding:3px 12px;border-radius:999px;margin-bottom:6px;text-shadow:0 1px 2px rgba(0,0,0,.3)}
@@ -213,9 +218,11 @@ footer a{color:var(--gold)}
 
 <script>
 /* Para añadir un boletín nuevo, agrega una línea a esta lista (el más reciente primero).
-   cls: 'lp' (La Paz), 'cb' (Cochabamba), 'sc' (Santa Cruz) o vacío para el estilo estándar.
+   cls: 'lp' (La Paz), 'cb' (Cochabamba), 'sc' (Santa Cruz), 'pt' (Potosí), 'pa' (Pando),
+        'bn' (Beni) o vacío para el estilo estándar. Agrega 'gold' para el borde dorado.
    badge: texto opcional de aniversario. */
 const BOLETINES = [
+  {dep:'Beni', ed:'Edición noviembre 2026', cls:'bn gold', badge:'🎉 Aniversario 184 de Beni', file:'2026/BOLETIN_DEPARTAMENTAL_DE_BENI_2026.pdf'},
   {dep:'Potosí', ed:'Edición noviembre 2026', cls:'pt gold', badge:'🎉 Aniversario 216 de Potosí', file:'2026/BOLETIN_DEPARTAMENTAL_DE_POTOSI_2026.pdf'},
   {dep:'Pando', ed:'Edición octubre 2026', cls:'pa gold', badge:'🎉 Aniversario 88 de Pando', file:'2026/BOLETIN_DEPARTAMENTAL_DE_PANDO_2026.pdf'},
   {dep:'Santa Cruz', ed:'Edición septiembre 2026', cls:'sc gold', badge:'🎉 Aniversario de Santa Cruz', file:'2026/Boletin_departamental_Santa_Cruz.pdf'},
